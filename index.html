@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Facturación</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>SISTEMA DE RECOPILACIÓN DE FACTURAS</h1>
+
+    <div class="top-buttons">
+        <button onclick="seleccionarTipo('Factura Tienda')">Factura Tienda</button>
+        <button onclick="seleccionarTipo('Factura Domicilio')">Factura Domicilio</button>
+        <button onclick="seleccionarTipo('Factura Líquidos')">Factura Líquidos</button>
+    </div>
+
+    <div class="card">
+
+        <h2 id="tipoFactura">Factura Tienda</h2>
+
+        <button class="save-btn" onclick="mostrarFormulario()">
+            + Crear Factura
+        </button>
+
+        <div id="formulario" class="hidden">
+
+            <div class="form-grid">
+
+                <div>
+                    <label>Fecha</label>
+                    <input type="date" id="fecha">
+                </div>
+
+                <div>
+                    <label>Mes</label>
+                    <select id="mes">
+                        <option>Enero</option>
+                        <option>Febrero</option>
+                        <option>Marzo</option>
+                        <option>Abril</option>
+                        <option>Mayo</option>
+                        <option>Junio</option>
+                        <option>Julio</option>
+                        <option>Agosto</option>
+                        <option>Septiembre</option>
+                        <option>Octubre</option>
+                        <option>Noviembre</option>
+                        <option>Diciembre</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Cédula o RUC</label>
+                    <input type="text" id="cedula">
+                </div>
+
+                <div>
+                    <label>Nombre Completo</label>
+                    <input type="text" id="nombre">
+                </div>
+
+                <div>
+                    <label>Dirección</label>
+                    <input type="text" id="direccion">
+                </div>
+
+                <div>
+                    <label>Teléfono</label>
+                    <input type="text" id="telefono">
+                </div>
+
+                <div>
+                    <label>Correo</label>
+                    <input type="email" id="correo">
+                </div>
+
+                <div>
+                    <label>Forma de Pago</label>
+                    <select id="pago">
+                        <option>Efectivo</option>
+                        <option>Transferencia</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Producto</label>
+                    <select id="producto">
+                        <option>Botellón de 20 litros</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Cantidad</label>
+                    <input type="number" id="cantidad">
+                </div>
+
+                <div>
+                    <label>Valor</label>
+                    <input type="number" id="valor">
+                </div>
+
+                <div>
+                    <label>IVA</label>
+                    <input type="text" value="0%" id="iva">
+                </div>
+
+            </div>
+
+            <button class="save-btn" onclick="guardarFactura()">
+                Guardar y Enviar
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h2>MESES</h2>
+
+        <div class="months">
+
+            <button onclick="verMes('Enero')">Enero</button>
+            <button onclick="verMes('Febrero')">Febrero</button>
+            <button onclick="verMes('Marzo')">Marzo</button>
+            <button onclick="verMes('Abril')">Abril</button>
+            <button onclick="verMes('Mayo')">Mayo</button>
+            <button onclick="verMes('Junio')">Junio</button>
+            <button onclick="verMes('Julio')">Julio</button>
+            <button onclick="verMes('Agosto')">Agosto</button>
+            <button onclick="verMes('Septiembre')">Septiembre</button>
+            <button onclick="verMes('Octubre')">Octubre</button>
+            <button onclick="verMes('Noviembre')">Noviembre</button>
+            <button onclick="verMes('Diciembre')">Diciembre</button>
+
+        </div>
+
+        <div id="tablaMes"></div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
